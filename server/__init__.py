@@ -13,4 +13,15 @@ def create_app(config_class=Config):
     # Register every model on db.metadata so Alembic autogenerate can see them.
     from server import models  # noqa: F401
 
+    from server.routes.workouts import workouts_bp
+    from server.routes.exercises import exercises_bp
+    from server.routes.workout_exercises import workout_exercises_bp
+
+    app.register_blueprint(workouts_bp)
+    app.register_blueprint(exercises_bp)
+    app.register_blueprint(workout_exercises_bp)
+
+    from server.errors import register_error_handlers
+    register_error_handlers(app)
+
     return app
