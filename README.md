@@ -48,8 +48,8 @@ reference and no need for `exclude=` or `lambda:` forward references.
 
 ## Installation
 ```bash
-git clone <repo-url>
-cd alchemy-workout
+git clone https://github.com/donotfalter-lab/Flask-SQLAlchemy-Workout-Application-Backend.git
+cd Flask-SQLAlchemy-Workout-Application-Backend
 pipenv install --dev
 pipenv shell
 flask db upgrade head
